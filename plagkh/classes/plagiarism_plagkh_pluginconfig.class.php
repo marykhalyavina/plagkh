@@ -33,9 +33,9 @@ class plagiarism_plagkh_pluginconfig {
         $config = self::admin_config();
 
         if (
-            #empty($config->plagiarism_copyleaks_key) ||
+            #empty($config->plagiarism_plagkh_key) ||
             empty($config->plagiarism_plagkh_apiurl) 
-            #|| empty($config->plagiarism_copyleaks_secret)
+            #|| empty($config->plagiarism_plagkh_secret)
         ) {
             // Plugin not configured.
             return false;
@@ -68,9 +68,9 @@ class plagiarism_plagkh_pluginconfig {
             "enabled",
             "plagkh_use",
             "plagiarism_plagkh_apiurl",
-            #"plagiarism_copyleaks_key",
-            #"plagiarism_copyleaks_secret",
-            #"plagiarism_copyleaks_jwttoken",
+            #"plagiarism_plagkh_key",
+            #"plagiarism_plagkh_secret",
+            #"plagiarism_plagkh_jwttoken",
             "plagiarism_plagkh_mod_assign",
             "plagiarism_plagkh_mod_forum",
             "plagiarism_plagkh_mod_workshop",

@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-#require_once($CFG->dirroot . '/plagiarism/copyleaks/classes/exceptions/plagiarism_copyleaks_authexception.class.php');
+#require_once($CFG->dirroot . '/plagiarism/plagkh/classes/exceptions/plagiarism_plagkh_authexception.class.php');
 require_once($CFG->dirroot . '/plagiarism/plagkh/classes/exceptions/plagiarism_plagkh_exception.class.php');
 require_once($CFG->dirroot . '/plagiarism/plagkh/classes/exceptions/plagiarism_plagkh_ratelimitexception.class.php');
 require_once($CFG->dirroot . '/plagiarism/plagkh/classes/exceptions/plagiarism_plagkh_undermaintenanceexception.class.php');
@@ -73,7 +73,7 @@ class plagiarism_plagkh_http_client {
         ];
 
         /*if ($requireauth) {
-            $cljwttoken = plagiarism_copyleaks_comms::login_to_copyleaks();
+            $cljwttoken = plagiarism_plagkh_comms::login_to_plagkh();
             $authorization = "Authorization: Bearer $cljwttoken";
             $pluginversion = "Plugin-Version: $version";
             $headers = array('Content-Type: ' . $contenttype, $authorization, $pluginversion);
@@ -108,13 +108,13 @@ class plagiarism_plagkh_http_client {
             }
         /*} else if (self::is_unauthorized_status_code($statuscode)) {
             if (!$isauthretry) {
-                // Try to get the jwt again from copyleaks (retry if unauthorized).
-                $cljwttoken = plagiarism_copyleaks_comms::login_to_copyleaks(null, null, null, true);
+                // Try to get the jwt again from plagkh (retry if unauthorized).
+                $cljwttoken = plagiarism_plagkh_comms::login_to_plagkh(null, null, null, true);
                 if (isset($cljwttoken)) {
                     return self::execute($verb, $url, $requireauth, $data, true);
                 }
             }
-            throw new plagiarism_copyleaks_auth_exception();*/
+            throw new plagiarism_plagkh_auth_exception();*/
         } else if (self::is_under_maintenance_response($statuscode)) {
             throw new plagiarism_plagkh_under_maintenance_exception();
         } else if (self::is_rate_limit_response($statuscode)) {

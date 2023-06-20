@@ -80,8 +80,8 @@ class plagiarism_plugin_plagkh extends plagiarism_plugin {
             plagiarism_plagkh_moduleconfig::set_module_config(
                 $data->coursemodule,
                 $data->plagiarism_plagkh_enable,
-                #isset($data->plagiarism_copyleaks_draftsubmit) ? $data->plagiarism_copyleaks_draftsubmit : 0,
-                #isset($data->plagiarism_copyleaks_reportgen) ? $data->plagiarism_copyleaks_reportgen : 0,
+                #isset($data->plagiarism_plagkh_draftsubmit) ? $data->plagiarism_plagkh_draftsubmit : 0,
+                #isset($data->plagiarism_plagkh_reportgen) ? $data->plagiarism_plagkh_reportgen : 0,
                 $data->plagiarism_plagkh_allowstudentaccess
             );
         } catch (plagiarism_plagkh_exception $ex) {
@@ -138,16 +138,16 @@ class plagiarism_plugin_plagkh extends plagiarism_plugin {
             /*if ($mform->elementExists('submissiondrafts')) {
                 $mform->addElement(
                     'advcheckbox',
-                    'plagiarism_copyleaks_draftsubmit',
-                    get_string("cldraftsubmit", "plagiarism_copyleaks")
+                    'plagiarism_plagkh_draftsubmit',
+                    get_string("cldraftsubmit", "plagiarism_plagkh")
                 );
                 $mform->addHelpButton(
-                    'plagiarism_copyleaks_draftsubmit',
+                    'plagiarism_plagkh_draftsubmit',
                     'cldraftsubmit',
-                    'plagiarism_copyleaks'
+                    'plagiarism_plagkh'
                 );
                 $mform->disabledIf(
-                    'plagiarism_copyleaks_draftsubmit',
+                    'plagiarism_plagkh_draftsubmit',
                     'submissiondrafts',
                     'eq',
                     0
@@ -184,11 +184,11 @@ class plagiarism_plugin_plagkh extends plagiarism_plugin {
                 );
 
                 /*$draftsubmit = isset($savedvalues['plagiarism_plagkh_draftsubmit']) ?
-                    $savedvalues['plagiarism_copyleaks_draftsubmit'] : 0;*/
+                    $savedvalues['plagiarism_plagkh_draftsubmit'] : 0;*/
 
-                //$mform->setDefault('plagiarism_copyleaks_draftsubmit', $draftsubmit);
-                /*if (isset($savedvalues['plagiarism_copyleaks_reportgen'])) {
-                    $mform->setDefault('plagiarism_copyleaks_reportgen', $savedvalues['plagiarism_copyleaks_reportgen']);
+                //$mform->setDefault('plagiarism_plagkh_draftsubmit', $draftsubmit);
+                /*if (isset($savedvalues['plagiarism_plagkh_reportgen'])) {
+                    $mform->setDefault('plagiarism_plagkh_reportgen', $savedvalues['plagiarism_plagkh_reportgen']);
                 }*/
                 if (isset($savedvalues['plagiarism_plagkh_allowstudentaccess'])) {
                     $mform->setDefault(
@@ -198,7 +198,7 @@ class plagiarism_plugin_plagkh extends plagiarism_plugin {
                 }
             } else {
                 $mform->setDefault('plagiarism_plagkh_enable', false);
-                //$mform->setDefault('plagiarism_copyleaks_draftsubmit', 0);
+                //$mform->setDefault('plagiarism_plagkh_draftsubmit', 0);
                 //$mform->setDefault('plagiarism_plagkh_reportgen', 0);
                 $mform->setDefault('plagiarism_plagkh_allowstudentaccess', 0);
             }
